@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React,{useState, useContext} from 'react';
+import AddMovie from './AddMovie';
+import { MovieProvider } from './MovieContext';
+
+import MovieList from './MovieList';
 
 function App() {
+  //  const [Movies,setMovies] = useContext(MovieContext);
+ 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Testing React Apps</h1>
+      <MovieProvider>
+         <div>
+            <MovieList />
+            <AddMovie />
+         </div>
+      </MovieProvider>
     </div>
   );
 }
